@@ -39,6 +39,13 @@ public class AppleTree : MonoBehaviour
         } 
     }
 
+    private void FixedUpdate()
+    {
+        // 随机改变运动方向
+        if (Random.value < chanceToChange1Directions)
+        {
+            speed *= -1;// 改变方向
+        }
     }
 
 }
