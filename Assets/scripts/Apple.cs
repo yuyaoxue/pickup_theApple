@@ -11,5 +11,8 @@ public class Apple : MonoBehaviour
         {
             Destroy(this.gameObject);
 
-	}
+            ApplePicker picker = Camera.main.GetComponent<ApplePicker>();
+            picker.AppleDestroyed();
+        }
+    }
 }
