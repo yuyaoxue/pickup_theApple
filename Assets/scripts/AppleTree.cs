@@ -18,6 +18,8 @@ public class AppleTree : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+        // 初始化	
+        InvokeRepeating("DropApple", 2f, secondsBetweenAppleDrops);
 	}
 
     private void Update()
@@ -48,4 +50,9 @@ public class AppleTree : MonoBehaviour
         }
     }
 
+    void DropApple()
+    {
+        GameObject apple = Instantiate(applePrefab) as GameObject;
+        apple.transform.position = transform.position;
+    }
 }
