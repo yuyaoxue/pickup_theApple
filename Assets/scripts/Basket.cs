@@ -18,4 +18,15 @@ public class Basket : MonoBehaviour
         this.transform.position = pos;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject collidedWith = collision.gameObject;
+        if(collidedWith.tag == "Apple")
+        {
+            Destroy(collidedWith);
+
+            //通知 controller 记录积分，并通知 view 更新显示
+
+        }
+    }
 }
