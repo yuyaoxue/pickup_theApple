@@ -30,6 +30,15 @@ public class AppleTree : MonoBehaviour
 
         //改变方向
 
+        if(pos.x < -leftAndRightEdge)
+        {
+            speed = Mathf.Abs(speed);// 向右运动
+        }else if(pos.x > leftAndRightEdge)
+        {
+            speed = -Mathf.Abs(speed);// 向左运动
+        } 
+    }
+
     }
 
 }
