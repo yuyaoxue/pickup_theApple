@@ -25,8 +25,10 @@ public class Basket : MonoBehaviour
         {
             Destroy(collidedWith);
 
-            //通知 controller 记录积分，并通知 view 更新显示
+            //通知 controller 记录积分
+            ScoreController.Instance().CurrentScore += GameConst.addScore_per;
 
+            //通知 view 更新显示
         }
     }
 }
