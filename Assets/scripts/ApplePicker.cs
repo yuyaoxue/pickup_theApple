@@ -17,7 +17,12 @@ public class ApplePicker : MonoBehaviour
     {
         Init();
     }
-    private void Init()
+    public void Init()
+    {
+        Init_Basket();
+        ScoreController.Instance().Init();
+    }
+    private void Init_Basket()
     {
         basketList = new List<GameObject>();
         for (int i = 0; i < numBaskets; i++)
@@ -54,12 +59,7 @@ public class ApplePicker : MonoBehaviour
         if(basketList.Count == 0)
         {
             Debug.Log("游戏结束");
-            SceneManager.LoadScene("scene_0");
+            SceneManager.LoadScene(GameConst.scene_start);
         }
-    }
-
-    public void Restart()
-    {
-
     }
 }
