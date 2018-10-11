@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public void OnReStartGameClick()
+    {
+        UIManager.Instance.StartGame();
+        ScoreController.Instance().Init();
+    }
 
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
+    public void OnReturnClick()
+    {
+        SceneManager.LoadScene(GameConst.scene_start);
+    }
 }
