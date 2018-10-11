@@ -27,8 +27,6 @@ public class Basket : MonoBehaviour
 
             //通知 controller 记录积分
             ScoreController.Instance().CurrentScore += GameConst.addScore_per;
-
-            //通知 view 更新显示
         }
     }
 }

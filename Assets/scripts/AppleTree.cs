@@ -15,12 +15,12 @@ public class AppleTree : MonoBehaviour
     // 苹果树改变方向的概率
     private float chanceToChange1Directions = 0.01f;
 
-	// Use this for initialization
-	void Start () 
-	{
+    public void Init()
+    {
         // 初始化	
         InvokeRepeating("DropApple", 2f, secondsBetweenAppleDrops);
-	}
+        UIManager.Instance.StartGame();
+    }
 
     private void Update()
     {
@@ -32,13 +32,14 @@ public class AppleTree : MonoBehaviour
 
         //改变方向
 
-        if(pos.x < -leftAndRightEdge)
+        if (pos.x < -leftAndRightEdge)
         {
             speed = Mathf.Abs(speed);// 向右运动
-        }else if(pos.x > leftAndRightEdge)
+        }
+        else if (pos.x > leftAndRightEdge)
         {
             speed = -Mathf.Abs(speed);// 向左运动
-        } 
+        }
     }
 
     private void FixedUpdate()
@@ -50,7 +51,7 @@ public class AppleTree : MonoBehaviour
         }
     }
 
-    void DropApple()
+    private void DropApple()
     {
         GameObject apple = Instantiate(applePrefab) as GameObject;
         apple.transform.position = transform.position;

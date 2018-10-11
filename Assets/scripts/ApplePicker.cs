@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class ApplePicker : MonoBehaviour
 {
     public GameObject basketPrefab;
-    private int numBaskets = 3;
+    public AppleTree tree;
+    private int numBaskets = 1;
     public float basketBottomY = -16f;
     public float basketSpacingY = 2f;
 
     public List<GameObject> basketList;
-
+    public static ApplePicker Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Use this for initialization
     void Start()
     {
@@ -20,6 +25,7 @@ public class ApplePicker : MonoBehaviour
     public void Init()
     {
         Init_Basket();
+        tree.Init();
         ScoreController.Instance().Init();
     }
     private void Init_Basket()
@@ -39,27 +45,21 @@ public class ApplePicker : MonoBehaviour
     {
         // 消除所有下落中的苹果
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple");
-        foreach( GameObject tGO in tAppleArray)
+        foreach (GameObject tGO in tAppleArray)
         {
             Destroy(tGO);
         }
 
-        // 消除一个篮筐
-        //获取 basketIndex 中最后一个篮筐的序号
-        int basketIndex = basketList.Count - 1;
-
-        //取得对篮筐的引用
-        GameObject tBasketGO = basketList[basketIndex];
-
-        //从列表中清除该篮框并销毁该游戏对象
-        basketList.RemoveAt(basketIndex);
-        Destroy(tBasketGO);
-
         //如果 basketList 的长度为 0，游戏结束
-        if(basketList.Count == 0)
+        if (ScoreController.Instance().BasketNumber > 0)
         {
-            Debug.Log("游戏结束");
-            SceneManager.LoadScene(GameConst.scene_start);
+            ScoreController.Instance().BasketNumber--;
+        }
+
+        if(ScoreController.Instance().BasketNumber == 0)
+        {
+            UIManager.Instance.GameOver();
+            UIManager.Instance.ClearEvent();
         }
     }
 }
