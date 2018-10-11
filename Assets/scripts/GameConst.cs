@@ -9,5 +9,5 @@ public class GameConst
     public const int addScore_per = 100;
 
     public const string scene_start = "start";
-    public const string scene_inGame = "scene_0";
+    public const string scene_inGame = "InGame";
 }
