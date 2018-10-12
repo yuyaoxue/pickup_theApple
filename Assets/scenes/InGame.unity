@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 0d886377290090c4c9895f081e3e30a2,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -145,8 +146,8 @@ Camera:
   m_GameObject: {fileID: 262829033}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5588235, g: 0.5588235, b: 0.5588235, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -306,17 +307,17 @@ Prefab:
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
@@ -336,7 +337,7 @@ Prefab:
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224429129456330682, guid: d7537ee7a30748b4eab82ae1bd456b87,
         type: 2}
